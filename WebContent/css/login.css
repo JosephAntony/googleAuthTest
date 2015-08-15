@@ -1,0 +1,52 @@
+html, body{
+	margin: 0;
+	height: 100vh;
+}
+
+#loginFrm{
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	left: 50%;
+	margin-left: -150px;
+	
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#customBtn {
+      display: inline-block;
+      background: #4285f4;
+      color: white;
+      width: 250px;
+      border-radius: 5px;
+      white-space: nowrap;
+}
+#customBtn:hover {
+      cursor: pointer;
+}
+span.label {
+      font-weight: bold;
+}
+span.icon {
+      background: url('/googleAuthenticator/img/login/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+      border-right: #2265d4 1px solid;
+}
+span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+}

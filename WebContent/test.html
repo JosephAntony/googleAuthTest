@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>hello <label id="name"></label></h1>
+		
+		<script type="text/javascript">
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function(){
+				if(xmlHttp.readyState == 4){
+					if(xmlHttp.status == 200){
+						console.log(xmlHttp.responseText);
+						var userObject = JSON.parse(xmlHttp.responseText);
+						document.getElementById("name").innerHTML= userObject["name"];
+					}
+				}
+			}
+			
+			xmlHttp.open("GET", "/googleAuthenticator/user/loginDetails", true);
+			xmlHttp.send();
+		</script>
+	</body>
+</html>

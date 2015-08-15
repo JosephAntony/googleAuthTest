@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="google-signin-client_id" content="695980982576-s9f3f7cuoq9ik5qr80ctqvet1d40gnpi.apps.googleusercontent.com">
+	<link rel="stylesheet" href="/googleAuthenticator/css/login.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	<script>
+		var auth = {};
+	</script>
+</head>
+<body>
+	<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<a href="#" onclick="signOut();">Sign out</a> -->
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+	<script>
+	function onSignIn(googleUser) {
+		  var profile = googleUser.getBasicProfile();
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('Name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail());
+		}
+	</script>
+	
+   <div class="container">	
+		<form action="/googleAuthenticator/login" method="GET" id="loginFrm">
+			<div id="gSignInWrapper">
+			    <div id="customBtn" class="customGPlusSignIn">
+			      <span class="icon"></span>
+			      <span class="buttonText">Sign in with Google</span>
+			    </div>
+	  		</div>
+		</form>
+   </div>		
+	
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script type="text/javascript" src="/googleAuthenticator/js/custom/login.js"></script>
+<script type="text/javascript">
+		document.getElementById("gSignInWrapper").addEventListener("click", auth.login, false);
+</script>
+</body>
+</html>
